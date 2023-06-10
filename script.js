@@ -3,16 +3,16 @@ window.addEventListener('keydown', function(event) {
   const audio = document.querySelector(`audio[data-key="${event.keyCode}"]`);
   const key = document.querySelector(`.key[data-key="${event.keyCode}"]`);
 
-  if (!audio) return; // Exit if there's no audio element for the pressed key
+  if (!audio) return;
 
-  audio.currentTime = 0; // Rewind the audio to the start
+  audio.currentTime = 0; 
   audio.play();
 
   key.classList.add('playing');
 });
 
 function removeTransition(event) {
-  if (event.propertyName !== 'transform') return; // Skip if it's not a transform transition
+  if (event.propertyName !== 'transform') return; 
   this.classList.remove('playing');
 }
 
